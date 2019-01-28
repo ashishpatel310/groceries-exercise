@@ -23,17 +23,13 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ]
 
-#print(products)
+products_count = len(products)
 
-#print(products[0]["name"])
-
-def product_name(any_product):
-    return any_product["name"]
-
-products = sorted(products, key=product_name)
+print("--------------")
+print("THERE ARE " + str(products_count) + " PRODUCTS:")
+print("--------------")
 
 for p in products:
-    print(p["name"] + " Price = $" + str(p["price"]))
+    price_usd = "${0:.2f}".format(p["price"])
+    print(" + " + p["name"] + " (" + str(price_usd) + ")")
 
-for p in products:
-    print(p["department"])
